@@ -21,7 +21,36 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    // MARK: Actions
+    
+    @IBAction func uploadLayout(_ sender: Any) {
+        
+        let dialog = NSOpenPanel();
+        
+        dialog.title                   = "Choose a directory file";
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = true
+        dialog.canChooseDirectories    = true
+        dialog.canCreateDirectories    = false
+        dialog.allowsMultipleSelection = false
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url! // Pathname of directory
+            
+            let fileHelper = FileHelper(result)
+            let request = fileHelper.getLayout()!
+            print(request.code)
+            let server = ServerCommunicator()
+            server.uploadLayout(request)
+            
+        } else {
+            // User clicked on "Cancel"
+            return
+        }
+        
+    }
+    
 
 }
 

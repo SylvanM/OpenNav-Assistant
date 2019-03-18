@@ -1,0 +1,6 @@
+framework module Pods_OpenNav_Assistant {
+  umbrella header "Pods-OpenNav Assistant-umbrella.h"
+
+  export *
+  module * { export * }
+}
