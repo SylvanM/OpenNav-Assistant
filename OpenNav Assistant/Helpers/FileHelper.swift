@@ -42,19 +42,7 @@ class FileHelper {
             return nil
         }
         
-        // now get the crypto info
-        var cryptoInfo: [String : String]
-        
-        do {
-            let cryptoData = try Data(contentsOf: directory.appendingPathComponent("crypto.json"))
-            let cryptoJSON = try JSON(data: cryptoData)
-            cryptoInfo = cryptoJSON.dictionaryObject as! [String : String]
-        } catch {
-            print("Error on getting crypto:", error)
-            return nil
-        }
-        
-        request = LayoutRequest(code: code, cryptoInfo: cryptoInfo, properties: [:])
+        request = LayoutRequest(code: code, properties: [:])
         
         // now get the rest of the properties. these are all optional
         

@@ -17,9 +17,6 @@ struct LayoutRequest {
     /// Code for layout
     var code: String
     
-    /// Cryptographic information for encrypting the layout
-    var cryptoInfo: [String : String]
-    
     /// Properties
     var properties: [LayoutProperty : Any]
     
@@ -69,7 +66,6 @@ struct LayoutRequest {
                     arguments[key.rawValue] = try jsonObject.rawData()
                 } catch {
                     arguments[key.rawValue] = nil
-                    print("NIL")
                 }
             }
         }
