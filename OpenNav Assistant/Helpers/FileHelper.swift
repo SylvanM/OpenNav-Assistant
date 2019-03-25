@@ -65,6 +65,7 @@ class FileHelper {
             let infoData = try Data(contentsOf: directory.appendingPathComponent("info.json"))
             let infoJSON = try JSON(data: infoData)
             info = infoJSON.dictionaryObject
+            print("Gathered info:", info as Any)
         } catch {
             print("Error getting info:", error)
         }
@@ -76,17 +77,19 @@ class FileHelper {
             let layoutData = try Data(contentsOf: directory.appendingPathComponent("layout.json"))
             let layoutJSON = try JSON(data: layoutData)
             layout = layoutJSON.arrayObject as? [[[String]]]
+            print("Gathered layout:", layout as Any)
         } catch {
             print("Error getting layout:", error)
         }
         
         // get rooms
-        var rooms: [String : String]? = nil
+        var rooms: [String : [Int]]? = nil
         
         do {
             let roomsData = try Data(contentsOf: directory.appendingPathComponent("rooms.json"))
             let roomsJSON = try JSON(data: roomsData)
-            rooms = roomsJSON.dictionaryObject as? [String : String]
+            rooms = roomsJSON.dictionaryObject as? [String : [Int]]
+            print("Gathered rooms:", rooms as Any)
         } catch {
             print("Error getting rooms:", error)
         }

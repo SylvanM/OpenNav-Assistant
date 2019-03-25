@@ -725,15 +725,27 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="removeLayout:" target="XfG-lQ-9wD" id="ZIX-nr-Vh3"/>
+                                </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="7hu-8n-cuZ">
+                                <rect key="frame" x="20" y="157" width="440" height="20"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="7hu-8n-cuZ" firstAttribute="top" secondItem="djH-7b-4ga" secondAttribute="bottom" constant="20" id="3fW-Ze-o5s"/>
                             <constraint firstItem="cy6-5V-1Kh" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="8tB-v9-Tap"/>
+                            <constraint firstItem="7hu-8n-cuZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="93b-AS-Buu"/>
                             <constraint firstItem="djH-7b-4ga" firstAttribute="top" secondItem="cy6-5V-1Kh" secondAttribute="bottom" constant="12" id="Jdp-Up-fBb"/>
                             <constraint firstItem="djH-7b-4ga" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fQZ-rx-3bQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7hu-8n-cuZ" secondAttribute="trailing" constant="20" id="jNK-TY-PRL"/>
                             <constraint firstItem="cy6-5V-1Kh" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="o36-EW-yWE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="7hu-8n-cuZ" id="49h-jT-hxm"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

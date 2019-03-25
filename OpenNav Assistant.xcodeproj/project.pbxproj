@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9BFFA8AF7D199517B9944A91 /* Pods_OpenNav_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC19A3A68A278F9491B6F09D /* Pods_OpenNav_Assistant.framework */; };
+		AE5B4C822245959F00FB98C8 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B4C812245959F00FB98C8 /* Global.swift */; };
 		AE7A76AC223E9BC500729CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76AB223E9BC500729CD1 /* AppDelegate.swift */; };
 		AE7A76AE223E9BC500729CD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76AD223E9BC500729CD1 /* ViewController.swift */; };
 		AE7A76B0223E9BC600729CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A76AF223E9BC600729CD1 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 		AE7A76E1223F051B00729CD1 /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E0223F051B00729CD1 /* Data+Encryption.swift */; };
 		AE7A76E3223F069F00729CD1 /* ServerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */; };
 		AE7A76E5223F111B00729CD1 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E4223F111B00729CD1 /* FileHelper.swift */; };
+		AE7A76E72242F6D100729CD1 /* String+split.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E62242F6D100729CD1 /* String+split.swift */; };
+		AED7D34A2248156200C9672E /* NSNotification.Name+ImageFrag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */; };
 		D244693F329C5CE91B4DD34E /* Pods_OpenNav_AssistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC69DF4CA71FE85C83D5FF6 /* Pods_OpenNav_AssistantUITests.framework */; };
 		FC1EFF02D8AB30DB10884255 /* Pods_OpenNav_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C883DD22FA962FC14BF10F /* Pods_OpenNav_AssistantTests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,7 @@
 		49C7F7C4E5EB2C7DAAA9D54D /* Pods-OpenNav AssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenNav AssistantTests.release.xcconfig"; path = "Target Support Files/Pods-OpenNav AssistantTests/Pods-OpenNav AssistantTests.release.xcconfig"; sourceTree = "<group>"; };
 		99C883DD22FA962FC14BF10F /* Pods_OpenNav_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DC9B19A6D6B1C244A9A837 /* Pods-OpenNav Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenNav Assistant.release.xcconfig"; path = "Target Support Files/Pods-OpenNav Assistant/Pods-OpenNav Assistant.release.xcconfig"; sourceTree = "<group>"; };
+		AE5B4C812245959F00FB98C8 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AE7A76A8223E9BC500729CD1 /* OpenNav Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenNav Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7A76AB223E9BC500729CD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7A76AD223E9BC500729CD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		AE7A76E0223F051B00729CD1 /* Data+Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
 		AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunicator.swift; sourceTree = "<group>"; };
 		AE7A76E4223F111B00729CD1 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		AE7A76E62242F6D100729CD1 /* String+split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+split.swift"; sourceTree = "<group>"; };
+		AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+ImageFrag.swift"; sourceTree = "<group>"; };
 		CBC69DF4CA71FE85C83D5FF6 /* Pods_OpenNav_AssistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_AssistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC19A3A68A278F9491B6F09D /* Pods_OpenNav_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42D1BE48AEDFA9411BCA1A /* Pods-OpenNav AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenNav AssistantUITests.release.xcconfig"; path = "Target Support Files/Pods-OpenNav AssistantUITests/Pods-OpenNav AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +139,8 @@
 		AE7A76AA223E9BC500729CD1 /* OpenNav Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				AE5B4C812245959F00FB98C8 /* Global.swift */,
+				AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */,
 				AE7A76DF223F050F00729CD1 /* Crypto */,
 				AE7A76DC223EFA4000729CD1 /* Helpers */,
 				AE7A76D9223E9FD000729CD1 /* Structs */,
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */,
+				AE7A76E62242F6D100729CD1 /* String+split.swift */,
 			);
 			path = "Server Communicator";
 			sourceTree = "<group>";
@@ -441,12 +450,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE7A76AE223E9BC500729CD1 /* ViewController.swift in Sources */,
+				AED7D34A2248156200C9672E /* NSNotification.Name+ImageFrag.swift in Sources */,
 				AE7A76E3223F069F00729CD1 /* ServerCommunicator.swift in Sources */,
 				AE7A76E1223F051B00729CD1 /* Data+Encryption.swift in Sources */,
+				AE7A76E72242F6D100729CD1 /* String+split.swift in Sources */,
 				AE7A76DE223EFA4A00729CD1 /* Image.swift in Sources */,
 				AE7A76DB223E9FDD00729CD1 /* LayoutRequest.swift in Sources */,
 				AE7A76E5223F111B00729CD1 /* FileHelper.swift in Sources */,
 				AE7A76AC223E9BC500729CD1 /* AppDelegate.swift in Sources */,
+				AE5B4C822245959F00FB98C8 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

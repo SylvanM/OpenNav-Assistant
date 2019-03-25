@@ -26,9 +26,9 @@ struct LayoutRequest {
     
     // MARK: Methods
     
-    func getURLArguments() -> [String : String] {
+    func getDatas() -> [String : Data] {
         
-        var arguments: [String : String] = [:]
+        var arguments: [String : Data] = [:]
         
         for key in LayoutProperty.allCases {
             if let property = properties[key] {
@@ -65,8 +65,12 @@ struct LayoutRequest {
                 
         
                 // Now set the string value to the arguments object
-                arguments[key.rawValue] = jsonObject.rawString()!
-                
+                do {
+                    arguments[key.rawValue] = try jsonObject.rawData()
+                } catch {
+                    arguments[key.rawValue] = nil
+                    print("NIL")
+                }
             }
         }
         
@@ -80,7 +84,7 @@ struct LayoutRequest {
         case images = "images"
         case info   = "info"
         case layout = "layout"
-        case rooms  = "room"
+        case rooms  = "rooms"
     }
     
 }
