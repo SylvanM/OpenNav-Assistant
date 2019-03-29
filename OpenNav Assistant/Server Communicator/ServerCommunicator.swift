@@ -14,30 +14,45 @@ import SwiftyJSON
 class ServerCommunicator {
     
     // MARK: Properties
+    
+    let manager = Alamofire.SessionManager.default
 
     /// Layouts URL
     let baseUrlString = "https://navdataservice.000webhostapp.com/layouts.php?f="
     
+    /// URL For editors
+    let editorURL     = "https://navdataservice.000webhostapp.com/editors.php?"
+    
     // MARK: Methods
     
-    func delete(layout: String, withTimeOut timeOut: Double = 60.0) {
-        let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest  = TimeInterval(timeOut)
-        manager.session.configuration.timeoutIntervalForResource = TimeInterval(timeOut)
-        
-        let url = URL(string: baseUrlString + "removeLayout&code=" + layout)!
-        print("Deleting:", url)
-        manager.request(url)
-    }
+    // MARK: - Uploading Layouts
+    
+    func delete(layout: String, withTimeOut timeOut: Double = 60.0) {}
     
     func uploadLayout(_ layout: LayoutRequest, withTimeOut timeOut: Double = 60.0) {
-        let manager = Alamofire.SessionManager.default
+        
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            let alert = NSAlert()
+            alert.messageText = "You are not logged in!"
+            alert.runModal()
+            return
+        }
+        
+        guard let password = UserDefaults.standard.string(forKey: "password") else {
+            let alert = NSAlert()
+            alert.messageText = "You are not logged in!"
+            alert.runModal()
+            return
+        }
+        
         manager.session.configuration.timeoutIntervalForRequest  = TimeInterval(timeOut)
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(timeOut)
         
         // make URL for adding code
         let code          = layout.code
-        let requestString = baseUrlString + "u&c=" + code.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        var requestString = baseUrlString + "u&c=" + code.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        requestString    += "&u="    + username.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! 
+        requestString    += "&pass=" + password.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let url           = URL(string: requestString)!
         
         let arguments = layout.getDatas()
@@ -54,13 +69,74 @@ class ServerCommunicator {
                     print("Upload Progress: \(progress.fractionCompleted)")
                 })
                 
-                upload.responseJSON { response in
-                    print("\nResponse for upload:\n", String(data: response.data!, encoding: .ascii)!, "\n\n")
+                upload.responseString { response in
+                    if let result = response.result.value {
+                        print("Response:", result)
+                    }
                 }
             case .failure(_):
                 print("FAIL")
+                let alert = NSAlert()
+                alert.messageText = "Check internet connection"
             }
         })
+    }
+    
+    // MARK: - Accounts
+    
+    func createAccount(username: String, password: String, completion: @escaping (String) -> ()) {
+        let arguments: [String : String] = [
+            "f": "a",
+            "u": username.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? username,
+            "pass": password.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? password
+        ]
         
+        runAccountFunction(arguments: arguments) { (response) in
+            print("Response on creating account:\n\(response)")
+            completion(response)
+        }
+    }
+    
+    func verifyAccount(username: String, password: String, completion: @escaping (Bool) -> ()) {
+        let arguments: [String : String] = [
+            "f": "v",
+            "u": username.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? username,
+            "pass": password.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? password.hash
+        ]
+        
+        runAccountFunction(arguments: arguments) { response in
+            switch response {
+            case "1":
+                completion(true)
+            default:
+                print("Response on login:\n\(response)")
+                completion(false)
+            }
+        }
+    }
+    
+    func runAccountFunction(arguments: [String : String], completion: @escaping (String) -> ()) {
+        var urlString = editorURL
+        
+        for arg in 0..<arguments.count {
+            
+            let isLastArg = arg == arguments.count - 1
+            let key = Array(arguments.keys)[arg]
+            urlString += "\(key)=\(arguments[key]!)"
+            
+            if !isLastArg {
+                urlString += "&"
+            }
+        }
+        
+        let url = URL(string: urlString)!
+        
+        manager.request(url).responseString { response in
+            if let string = response.result.value {
+                completion(string)
+            } else {
+                completion("no response")
+            }
+        }
     }
 }

@@ -9,6 +9,8 @@
 import XCTest
 @testable import OpenNav_Assistant
 
+import Security
+
 class OpenNav_AssistantTests: XCTestCase {
 
     override func setUp() {

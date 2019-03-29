@@ -8,12 +8,10 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBar), name: .uploadedImageFragment, object: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -26,35 +24,11 @@ class ViewController: NSViewController {
     
     // MARK: Properties
     
-    @IBOutlet weak var progressBar: NSProgressIndicator!
-    
     // MARK: Actions
     
     @IBAction func uploadLayout(_ sender: Any) {
         
-        let dialog = NSOpenPanel();
         
-        dialog.title                    = "Choose a directory file";
-        dialog.showsResizeIndicator     = true
-        dialog.showsHiddenFiles         = true
-        dialog.canChooseDirectories     = true
-        dialog.canCreateDirectories     = false
-        dialog.allowsMultipleSelection  = false
-        dialog.defaultButtonCell?.title = "Upload"
-        
-        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            let result = dialog.url! // Pathname of directory
-            
-            let fileHelper = FileHelper(result)
-            let request = fileHelper.getLayout()!
-            print(request.code)
-            let server = ServerCommunicator()
-            server.uploadLayout(request)
-            
-        } else {
-            // User clicked on "Cancel"
-            return
-        }
         
     }
     
@@ -79,13 +53,6 @@ class ViewController: NSViewController {
             server.delete(layout: field.stringValue)
         }
         
-    }
-    
-    // MARK: Observers
-    
-    @objc
-    func updateProgressBar() {
-        progressBar.doubleValue = percentImageFragmentsSent
     }
     
 }

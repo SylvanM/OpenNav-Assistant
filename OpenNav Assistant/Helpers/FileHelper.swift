@@ -29,7 +29,7 @@ class FileHelper {
     
     // MARK: Methods
     
-    func getLayout() -> LayoutRequest? {
+    func getLayout() throws -> LayoutRequest {
         var request: LayoutRequest
         
         // first, get the code
@@ -38,8 +38,7 @@ class FileHelper {
         do {
             code = try String(contentsOf: directory.appendingPathComponent("code", isDirectory: false))
         } catch {
-            print("Error on getting code:", error)
-            return nil
+            throw FileError.noCode
         }
         
         request = LayoutRequest(code: code, properties: [:])
@@ -117,6 +116,10 @@ class FileHelper {
         }
         
         return images
+    }
+    
+    enum FileError: String, Error {
+        case noCode = "There was no file with a suitable code found in the directory"
     }
     
 }

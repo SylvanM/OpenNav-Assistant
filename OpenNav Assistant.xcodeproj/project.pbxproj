@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		9BFFA8AF7D199517B9944A91 /* Pods_OpenNav_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC19A3A68A278F9491B6F09D /* Pods_OpenNav_Assistant.framework */; };
+		AE0931EE224EE4A80015E7F7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0931ED224EE4A80015E7F7 /* Feed.swift */; };
+		AE25B4C2224963F800F09F7A /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25B4C1224963F800F09F7A /* String+Hash.swift */; };
+		AE4FC343224A646C00DB96DD /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FC342224A646C00DB96DD /* MainWindowController.swift */; };
+		AE4FC345224A699F00DB96DD /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FC344224A699F00DB96DD /* MenuController.swift */; };
+		AE4FC34A224A6C9300DB96DD /* FileBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FC349224A6C9300DB96DD /* FileBrowserViewController.swift */; };
+		AE4FC34C224A6CB600DB96DD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4FC34B224A6CB600DB96DD /* SplitViewController.swift */; };
 		AE5B4C822245959F00FB98C8 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B4C812245959F00FB98C8 /* Global.swift */; };
 		AE7A76AC223E9BC500729CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76AB223E9BC500729CD1 /* AppDelegate.swift */; };
-		AE7A76AE223E9BC500729CD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76AD223E9BC500729CD1 /* ViewController.swift */; };
+		AE7A76AE223E9BC500729CD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76AD223E9BC500729CD1 /* MainViewController.swift */; };
 		AE7A76B0223E9BC600729CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A76AF223E9BC600729CD1 /* Assets.xcassets */; };
 		AE7A76B3223E9BC600729CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A76B1223E9BC600729CD1 /* Main.storyboard */; };
 		AE7A76BF223E9BC600729CD1 /* OpenNav_AssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76BE223E9BC600729CD1 /* OpenNav_AssistantTests.swift */; };
 		AE7A76CA223E9BC600729CD1 /* OpenNav_AssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76C9223E9BC600729CD1 /* OpenNav_AssistantUITests.swift */; };
 		AE7A76DB223E9FDD00729CD1 /* LayoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76DA223E9FDD00729CD1 /* LayoutRequest.swift */; };
 		AE7A76DE223EFA4A00729CD1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76DD223EFA4A00729CD1 /* Image.swift */; };
-		AE7A76E1223F051B00729CD1 /* Data+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E0223F051B00729CD1 /* Data+Encryption.swift */; };
 		AE7A76E3223F069F00729CD1 /* ServerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */; };
 		AE7A76E5223F111B00729CD1 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E4223F111B00729CD1 /* FileHelper.swift */; };
-		AE7A76E72242F6D100729CD1 /* String+split.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A76E62242F6D100729CD1 /* String+split.swift */; };
 		AED7D34A2248156200C9672E /* NSNotification.Name+ImageFrag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */; };
 		D244693F329C5CE91B4DD34E /* Pods_OpenNav_AssistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC69DF4CA71FE85C83D5FF6 /* Pods_OpenNav_AssistantUITests.framework */; };
 		FC1EFF02D8AB30DB10884255 /* Pods_OpenNav_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C883DD22FA962FC14BF10F /* Pods_OpenNav_AssistantTests.framework */; };
@@ -50,10 +54,16 @@
 		49C7F7C4E5EB2C7DAAA9D54D /* Pods-OpenNav AssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenNav AssistantTests.release.xcconfig"; path = "Target Support Files/Pods-OpenNav AssistantTests/Pods-OpenNav AssistantTests.release.xcconfig"; sourceTree = "<group>"; };
 		99C883DD22FA962FC14BF10F /* Pods_OpenNav_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DC9B19A6D6B1C244A9A837 /* Pods-OpenNav Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenNav Assistant.release.xcconfig"; path = "Target Support Files/Pods-OpenNav Assistant/Pods-OpenNav Assistant.release.xcconfig"; sourceTree = "<group>"; };
+		AE0931ED224EE4A80015E7F7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		AE25B4C1224963F800F09F7A /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		AE4FC342224A646C00DB96DD /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		AE4FC344224A699F00DB96DD /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		AE4FC349224A6C9300DB96DD /* FileBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserViewController.swift; sourceTree = "<group>"; };
+		AE4FC34B224A6CB600DB96DD /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		AE5B4C812245959F00FB98C8 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AE7A76A8223E9BC500729CD1 /* OpenNav Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenNav Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7A76AB223E9BC500729CD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE7A76AD223E9BC500729CD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE7A76AD223E9BC500729CD1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AE7A76AF223E9BC600729CD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE7A76B2223E9BC600729CD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE7A76B4223E9BC600729CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,10 +76,8 @@
 		AE7A76CB223E9BC600729CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE7A76DA223E9FDD00729CD1 /* LayoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutRequest.swift; sourceTree = "<group>"; };
 		AE7A76DD223EFA4A00729CD1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		AE7A76E0223F051B00729CD1 /* Data+Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Encryption.swift"; sourceTree = "<group>"; };
 		AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunicator.swift; sourceTree = "<group>"; };
 		AE7A76E4223F111B00729CD1 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
-		AE7A76E62242F6D100729CD1 /* String+split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+split.swift"; sourceTree = "<group>"; };
 		AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+ImageFrag.swift"; sourceTree = "<group>"; };
 		CBC69DF4CA71FE85C83D5FF6 /* Pods_OpenNav_AssistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_AssistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC19A3A68A278F9491B6F09D /* Pods_OpenNav_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenNav_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +122,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE0931EC224EE47A0015E7F7 /* Outline */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FC349224A6C9300DB96DD /* FileBrowserViewController.swift */,
+				AE0931ED224EE4A80015E7F7 /* Feed.swift */,
+			);
+			path = Outline;
+			sourceTree = "<group>";
+		};
+		AE4FC33F224A644800DB96DD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE4FC346224A6C3A00DB96DD /* File Editor */,
+				AE4FC342224A646C00DB96DD /* MainWindowController.swift */,
+				AE4FC344224A699F00DB96DD /* MenuController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AE4FC346224A6C3A00DB96DD /* File Editor */ = {
+			isa = PBXGroup;
+			children = (
+				AE0931EC224EE47A0015E7F7 /* Outline */,
+				AE7A76AD223E9BC500729CD1 /* MainViewController.swift */,
+				AE4FC34B224A6CB600DB96DD /* SplitViewController.swift */,
+			);
+			path = "File Editor";
+			sourceTree = "<group>";
+		};
 		AE7A769F223E9BC500729CD1 = {
 			isa = PBXGroup;
 			children = (
@@ -139,16 +176,16 @@
 		AE7A76AA223E9BC500729CD1 /* OpenNav Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				AE7A76B1223E9BC600729CD1 /* Main.storyboard */,
+				AE4FC33F224A644800DB96DD /* View Controllers */,
 				AE5B4C812245959F00FB98C8 /* Global.swift */,
 				AED7D3492248156200C9672E /* NSNotification.Name+ImageFrag.swift */,
-				AE7A76DF223F050F00729CD1 /* Crypto */,
+				AE25B4C1224963F800F09F7A /* String+Hash.swift */,
 				AE7A76DC223EFA4000729CD1 /* Helpers */,
 				AE7A76D9223E9FD000729CD1 /* Structs */,
 				AE7A76D8223E9FC600729CD1 /* Server Communicator */,
 				AE7A76AB223E9BC500729CD1 /* AppDelegate.swift */,
-				AE7A76AD223E9BC500729CD1 /* ViewController.swift */,
 				AE7A76AF223E9BC600729CD1 /* Assets.xcassets */,
-				AE7A76B1223E9BC600729CD1 /* Main.storyboard */,
 				AE7A76B4223E9BC600729CD1 /* Info.plist */,
 				AE7A76B5223E9BC600729CD1 /* OpenNav_Assistant.entitlements */,
 			);
@@ -177,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				AE7A76E2223F069F00729CD1 /* ServerCommunicator.swift */,
-				AE7A76E62242F6D100729CD1 /* String+split.swift */,
 			);
 			path = "Server Communicator";
 			sourceTree = "<group>";
@@ -197,14 +233,6 @@
 				AE7A76E4223F111B00729CD1 /* FileHelper.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		AE7A76DF223F050F00729CD1 /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				AE7A76E0223F051B00729CD1 /* Data+Encryption.swift */,
-			);
-			path = Crypto;
 			sourceTree = "<group>";
 		};
 		DE135104A028582BC1F4D4E2 /* Pods */ = {
@@ -449,13 +477,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE7A76AE223E9BC500729CD1 /* ViewController.swift in Sources */,
+				AE7A76AE223E9BC500729CD1 /* MainViewController.swift in Sources */,
+				AE4FC34A224A6C9300DB96DD /* FileBrowserViewController.swift in Sources */,
 				AED7D34A2248156200C9672E /* NSNotification.Name+ImageFrag.swift in Sources */,
+				AE0931EE224EE4A80015E7F7 /* Feed.swift in Sources */,
+				AE25B4C2224963F800F09F7A /* String+Hash.swift in Sources */,
 				AE7A76E3223F069F00729CD1 /* ServerCommunicator.swift in Sources */,
-				AE7A76E1223F051B00729CD1 /* Data+Encryption.swift in Sources */,
-				AE7A76E72242F6D100729CD1 /* String+split.swift in Sources */,
+				AE4FC343224A646C00DB96DD /* MainWindowController.swift in Sources */,
+				AE4FC345224A699F00DB96DD /* MenuController.swift in Sources */,
 				AE7A76DE223EFA4A00729CD1 /* Image.swift in Sources */,
 				AE7A76DB223E9FDD00729CD1 /* LayoutRequest.swift in Sources */,
+				AE4FC34C224A6CB600DB96DD /* SplitViewController.swift in Sources */,
 				AE7A76E5223F111B00729CD1 /* FileHelper.swift in Sources */,
 				AE7A76AC223E9BC500729CD1 /* AppDelegate.swift in Sources */,
 				AE5B4C822245959F00FB98C8 /* Global.swift in Sources */,
