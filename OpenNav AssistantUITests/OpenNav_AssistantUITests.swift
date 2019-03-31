@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import OpenNav_Assistant
 
 class OpenNav_AssistantUITests: XCTestCase {
 

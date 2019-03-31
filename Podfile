@@ -8,7 +8,6 @@ target 'OpenNav Assistant' do
   # Pods for OpenNav Assistant
 
   pod 'Alamofire'
-  pod 'CryptoSwift'
   pod 'SwiftyJSON'
 
   target 'OpenNav AssistantTests' do

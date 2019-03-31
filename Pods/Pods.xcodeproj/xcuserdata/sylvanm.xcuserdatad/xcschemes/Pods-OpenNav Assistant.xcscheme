@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9169B3F7FC047B716A631CD2C42D549"
+               BlueprintIdentifier = "A229BB974EB91393A47510FACDD09B85"
                BuildableName = "Pods_OpenNav_Assistant.framework"
                BlueprintName = "Pods-OpenNav Assistant"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9169B3F7FC047B716A631CD2C42D549"
+            BlueprintIdentifier = "A229BB974EB91393A47510FACDD09B85"
             BuildableName = "Pods_OpenNav_Assistant.framework"
             BlueprintName = "Pods-OpenNav Assistant"
             ReferencedContainer = "container:Pods.xcodeproj">
