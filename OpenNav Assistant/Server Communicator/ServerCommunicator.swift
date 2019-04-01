@@ -29,7 +29,7 @@ class ServerCommunicator {
     
     func delete(layout: String, withTimeOut timeOut: Double = 60.0) {}
     
-    func uploadLayout(_ layout: LayoutRequest, withTimeOut timeOut: Double = 60.0) {
+    func uploadLayout(_ layout: LayoutRequest, withTimeOut timeOut: Double = 60.0, completion: @escaping (Any) -> ()) {
         
         guard let username = UserDefaults.standard.string(forKey: "username") else {
             let alert = NSAlert()
@@ -79,6 +79,7 @@ class ServerCommunicator {
                 let alert = NSAlert()
                 alert.messageText = "Check internet connection"
             }
+            completion(result)
         })
     }
     

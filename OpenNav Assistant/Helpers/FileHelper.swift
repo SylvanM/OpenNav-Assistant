@@ -93,13 +93,40 @@ class FileHelper {
         return request
     }
     
+    // Returns a the code, and a list of file names along with their URL
+    func getFiles() throws -> (String, [(String, URL)])? {
+        
+        var returnValue: (String, [(String, URL)])? = nil
+        var code: String
+        
+        do {
+            code = try String(contentsOf: directory.appendingPathComponent("code", isDirectory: false))
+        } catch {
+            throw FileError.noCode
+        }
+        
+        returnValue = (code, [])
+        
+        if let enumerator = FileManager.default.enumerator(atPath: self.directory.path) {
+            while let element = enumerator.nextObject() as? String {
+                if element != ".DS_Store" && element != "code" {
+                    let fileToAppend = ((element as NSString).deletingPathExtension, self.directory.appendingPathComponent(element))
+                    returnValue?.1.append(fileToAppend)
+                }
+            }
+        }
+        
+        return returnValue
+        
+    }
+    
     func extractImages() -> [String : Image] {
         var fileNames: [String] = []
         var images: [String : NSImage] = [:]
         let fileManager = FileManager.default
         
         // loop through all files in directory
-        if let enumerator = fileManager.enumerator(atPath: directory.path) {
+        if let enumerator = fileManager.enumerator(atPath: self.directory.path) {
             while let element = enumerator.nextObject() as? String {
                 if element.hasSuffix("png") { // checks the extension
                     fileNames.append(element)

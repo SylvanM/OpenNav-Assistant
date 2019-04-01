@@ -8,16 +8,26 @@
 
 import Foundation
 
-/// made so that a loading bar can access how far the upload is
+/// Contains constants for keys for the global dictionary
+enum GlobalKey: String {
+    case layoutDir = "layout_directory"
+}
 
-public var fragmentsSent: Int = 0 {
-    didSet {
-        NotificationCenter.default.post(name: .uploadedImageFragment, object: nil)
+var layoutCode: String? {
+    do {
+        guard let url = directory else { return nil }
+        return try FileHelper(url).getFiles()?.0
+    } catch {
+        return nil
     }
 }
 
-public var totalFragments: Int = 1
-
-public var percentImageFragmentsSent: Double {
-    return Double(fragmentsSent / totalFragments)
+var directory: URL? = UserDefaults.standard.url(forKey: GlobalKey.layoutDir.rawValue) {
+    didSet {
+        UserDefaults.standard.set(directory, forKey: GlobalKey.layoutDir.rawValue)
+        notificationCenter.post(.directoryURLSet)
+        
+        
+        
+    }
 }

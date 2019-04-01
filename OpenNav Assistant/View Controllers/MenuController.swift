@@ -20,6 +20,12 @@ class MenuController: NSMenu {
     @IBOutlet var createButton: NSMenuItem!
     @IBOutlet var logoutButton: NSMenuItem!
     
+    // FILE Menu Items
+    
+    @IBOutlet var newFile:  NSMenuItem!
+    @IBOutlet var openFile: NSMenuItem!
+    
+    
     // MARK: Actions
     
     @IBAction func login(_ sender: Any?) {
@@ -43,6 +49,7 @@ class MenuController: NSMenu {
         if response == .alertFirstButtonReturn {
             let username = unameField.stringValue
             let password = passField.stringValue
+            notificationCenter.post(.startActivity)
             login(username: username, password: password)
         }
     }
@@ -69,6 +76,7 @@ class MenuController: NSMenu {
             let username = unameField.stringValue
             let password = passField.stringValue
             server.createAccount(username: username, password: password) { response in
+                notificationCenter.post(.startActivity)
                 if response != "" {
                     let alert = NSAlert()
                     alert.messageText = response
@@ -84,6 +92,40 @@ class MenuController: NSMenu {
         UserDefaults.standard.set(nil, forKey: "passsword")
     }
     
+    // MARK: File Actions
+    
+    @IBAction func newFile(_ sender: Any?) {
+        
+    }
+    
+    @IBAction func openFile(_ sender: Any?) {
+        let dialog = NSOpenPanel();
+        
+        dialog.title                    = "Choose a directory";
+        dialog.showsResizeIndicator     = true
+        dialog.showsHiddenFiles         = false
+        dialog.canChooseDirectories     = true
+        dialog.canCreateDirectories     = false
+        dialog.allowsMultipleSelection  = false
+        dialog.defaultButtonCell?.title = "Open"
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url! // Pathname of directory
+            
+            // first, save it!
+            directory = result
+            
+        } else {
+            // User clicked on "Cancel"
+            return
+        }
+    }
+    
+    @IBAction func closeFile(_ sender: Any?) {
+        directory = nil
+    }
+    
+    
     // MARK: Methods
     
     func login(username: String, password: String) {
@@ -97,7 +139,7 @@ class MenuController: NSMenu {
                 errorAlert.messageText = "Could not log in"
                 errorAlert.runModal()
             }
+            notificationCenter.post(.stopActivity)
         }
     }
-    
 }

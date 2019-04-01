@@ -8,10 +8,19 @@
 
 import Cocoa
 
-class MainViewController: NSViewController {
+class FileViewController: NSViewController {
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet var      textView:  NSTextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.isHidden = true
+        textView.isHidden  = false
 
         // Do any additional setup after loading the view.
     }
@@ -22,7 +31,24 @@ class MainViewController: NSViewController {
         }
     }
     
-    // MARK: Properties
+    // MARK: Methods
+    
+    func displayImage(_ image: Image) {
+        textView.isHidden  = true
+        imageView.isHidden = false
+        imageView.image = image
+    }
+    
+    func displayFile(_ data: Data, encoding: String.Encoding) {
+        imageView.isHidden = true
+        textView.isHidden  = false
+        
+        if let displayText = String(data: data, encoding: encoding) {
+            textView.string = displayText
+        } else {
+            textView.string = "Unable to load file"
+        }
+    }
     
     // MARK: Actions
     
